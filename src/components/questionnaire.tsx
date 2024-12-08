@@ -75,10 +75,10 @@ const MCQQuestionnaire = () => {
   const [questions, setQuestions] = useState([...INITIAL_FIXED_QUESTIONS]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isPreviewMode, setIsPreviewMode] = useState(false);
-  const [patientAnswers, setPatientAnswers] = useState({});
+  const [patientAnswers, setPatientAnswers] = useState<{ [key: number]: number }>({});
   const [isEnglish, setIsEnglish] = useState(true);
 
-  const getOptionRows = (options) => {
+  const getOptionRows = (options : any) => {
     const rows = [];
     for (let i = 0; i < options.length; i += 4) {
       rows.push(options.slice(i, Math.min(i + 4, options.length)));
@@ -113,7 +113,7 @@ const MCQQuestionnaire = () => {
     setQuestions(newQuestions);
   };
 
-  const deleteOption = (optionIndex) => {
+  const deleteOption = (optionIndex : any) => {
     const newQuestions = [...questions];
     newQuestions[currentQuestionIndex].optionsEn.splice(optionIndex, 1);
     newQuestions[currentQuestionIndex].optionsZh.splice(optionIndex, 1);
@@ -125,7 +125,7 @@ const MCQQuestionnaire = () => {
     setQuestions(newQuestions);
   };
 
-  const updateQuestion = (lang, e) => {
+  const updateQuestion = (lang : any, e : any) => {
     const newQuestions = [...questions];
     if (lang === 'en') {
       newQuestions[currentQuestionIndex].questionEn = e.target.value;
@@ -135,7 +135,7 @@ const MCQQuestionnaire = () => {
     setQuestions(newQuestions);
   };
 
-  const updateOption = (optionIndex, lang, e) => {
+  const updateOption = (optionIndex : any, lang : any, e : any) => {
     const newQuestions = [...questions];
     if (lang === 'en') {
       newQuestions[currentQuestionIndex].optionsEn[optionIndex] = e.target.value;
@@ -145,13 +145,13 @@ const MCQQuestionnaire = () => {
     setQuestions(newQuestions);
   };
 
-  const setCorrectAnswer = (optionIndex) => {
+  const setCorrectAnswer = (optionIndex : any) => {
     const newQuestions = [...questions];
     newQuestions[currentQuestionIndex].correctAnswer = optionIndex;
     setQuestions(newQuestions);
   };
 
-  const handlePatientSelection = (optionIndex) => {
+  const handlePatientSelection = (optionIndex : any) => {
     setPatientAnswers({
       ...patientAnswers,
       [currentQuestionIndex]: optionIndex
@@ -206,7 +206,7 @@ const MCQQuestionnaire = () => {
                 gridTemplateColumns: `repeat(${row.length}, 1fr)`
               }}
             >
-              {row.map((option, index) => {
+              {row.map((option : any, index : any) => {
                 const optionIndex = rowIndex * 4 + index;
                 return (
                   <Card
@@ -298,7 +298,7 @@ const MCQQuestionnaire = () => {
                 gridTemplateColumns: `repeat(${row.length}, 1fr)`
               }}
             >
-              {row.map((option, index) => {
+              {row.map((option : any, index : any) => {
                 const optionIndex = rowIndex * 4 + index;
                 return (
                   <Card
