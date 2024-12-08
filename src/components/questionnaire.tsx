@@ -15,14 +15,14 @@ const INITIAL_FIXED_QUESTIONS = [
   },
   {
     questionEn: "How old are you?",
-    questionZh: "你多大了？",
+    questionZh: "你今年几岁？",
     optionsEn: ['', ''],
     optionsZh: ['', ''],
     correctAnswer: 0
   },
   {
     questionEn: "What is your Birthday?",
-    questionZh: "你的生日是什么时候？",
+    questionZh: "你的生日是几时？",
     optionsEn: ['', ''],
     optionsZh: ['', ''],
     correctAnswer: 0
@@ -50,14 +50,14 @@ const INITIAL_FIXED_QUESTIONS = [
   },
   {
     questionEn: "What is the current year?",
-    questionZh: "现在是哪一年？",
+    questionZh: "今年是哪一年？",
     optionsEn: ['', ''],
     optionsZh: ['', ''],
     correctAnswer: 0
   },
   {
     questionEn: "What is this place?",
-    questionZh: "这是什么地方？",
+    questionZh: "这是什么哪里？",
     optionsEn: ['', ''],
     optionsZh: ['', ''],
     correctAnswer: 0
